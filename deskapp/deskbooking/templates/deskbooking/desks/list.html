@@ -1,0 +1,41 @@
+{% extends "deskbooking/base.html" %}
+
+{% block title %}Desk List{% endblock %}
+
+{% block content %}
+
+<div class="columns is-centered">
+    <div class="column is-5">
+        <h1 class="is-sr-only">Desk List</h1>
+        <!--start empty content-->
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <p>
+                    <span class="icon-text"> 
+                        <span class="icon has-text-info">
+                            <em class="fas fa-info-circle"></em>
+                        </span>
+                    </span> No desks have been added yet.
+                </p>
+            </div>
+        </div>
+        <!--end empty content-->
+        <table class="table is-centered" style="margin: auto">
+            <caption class="is-sr-only">Desk list</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Desk Name</th>
+                    <th scope="col">Location</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="deskName0">31</td>
+                    <td id="location0">Stella House</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

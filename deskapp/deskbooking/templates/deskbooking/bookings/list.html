@@ -1,0 +1,45 @@
+{% extends "deskbooking/base.html" %}
+
+{% block title %}Bookings List{% endblock %}
+
+{% block content %}
+
+<div class="columns is-centered">
+    <div class="column is-5">
+        <h1 class="is-sr-only">Booking List</h1>
+        <!--start empty content-->
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <p>
+                    <span class="icon-text"> 
+                        <span class="icon has-text-info">
+                            <em class="fas fa-info-circle"></em>
+                        </span>
+                    </span> There aren't any bookings yet.
+                </p>
+            </div>
+        </div>
+        <!--end empty content-->
+        <table class="table is-centered" style="margin: auto">
+            <caption class="is-sr-only">Booking list</caption>
+            <thead>
+                <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">Location</th>
+                    <th scope="col">Desk</th>
+                    <th scope="col">Booked By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="date0">01/01/1900</td>
+                    <td id="location0">Stella House</td>
+                    <td id="desk0">31</td>
+                    <td id="booker0">Matt Graham</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{% endblock %}

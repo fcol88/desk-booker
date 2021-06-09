@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% block title %}{% endblock %} | DeskBooker</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+        <script src="{% static 'js/main.js' %}"></script>
+        <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+        {% endblock %}
+    </head>
+    <body>
+        <section class="hero is-fullheight {{ additional_hero_styles }}" role="main">
+            <div class="hero-head">
+                <nav class="navbar" aria-label="Navigation">
+                    <div class="container">
+                        <div class="navbar-brand">
+                            <a class="navbar-item" href="/"><span id="logoLink" class="title">DeskBooker</span></a>
+                            <span class="navbar-burger" data-target="navbarMenuHeroA"> 
+                                <span></span>
+					            <span></span>
+                                <span></span>
+                            </span>
+                        </div>
+                        <div id="navbarMenuHeroA" class="navbar-menu">
+                            <div class="navbar-end">
+                                <a id="homeLink" class="navbar-item {% if selected == 'home' %}is-active{% endif %}" href="/">Home</a>
+                                <a id="bookingFormLink" class="navbar-item {% if selected == 'bookingform' %}is-active{% endif %}" href="/bookings/form">Add booking</a>
+                                <a id="bookingListLink" class="navbar-item {% if selected == 'bookings' %}is-active{% endif %}" href="/bookings/list">List bookings</a>
+                                <a id="locationFormLink" class="navbar-item {% if selected == 'locationform' %}is-active{% endif %}" href="/locations/form">Add location</a>
+                                <a id="locationListLink" class="navbar-item {% if selected == 'locations' %}is-active{% endif %}" href="/locations/list">List locations</a>
+                                <a id="deskFormLink" class="navbar-item {% if selected == 'deskform' %}is-active{% endif %}" href="/desks/form">Add desk</a>
+                                <a id="deskListLink" class="navbar-item {% if selected == 'desks' %}is-active{% endif %}" href="/desks/list">List desks</a>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="hero-body">
+                <div class="container">
+                    {% block content %}{% endblock %}
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
